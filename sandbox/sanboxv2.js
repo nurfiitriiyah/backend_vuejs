@@ -26,10 +26,10 @@ let ships = {
 }
 let generateEmptyBoard = [];
 var i = 0;
-while (i < 12) {
+while (i < 10) {
     let generate = [];
     var k = 0;
-    while (k < 12) {
+    while (k < 10) {
         generate.push(" ")
         k++;
     }
@@ -51,7 +51,7 @@ function generateBoard() {
             } else {
                 var FH = 0;
                 var checkFH = false;
-                while(FH < 12){
+                while(FH < 10){
                     if (generateEmptyBoard[foundXPoint][FH] === " ") {
                         generateEmptyBoard[foundXPoint][FH] = ships[typeShips[l]].code
                         FH = 11;
