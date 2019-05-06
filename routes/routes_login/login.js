@@ -1,11 +1,20 @@
 var express = require('express');
 var router = express.Router();
-
+var backend = require("../../backend/backend_login/login")
 /* GET home page. */
 router.post('/', function (req, res, next) {
-    console.log("===============POST LOGIN=========================")
-    console.log(req.body)
-    res.json("hello")
+  try{
+      console.log("===============POST LOGIN=========================")
+      var checkLogin = backend.login(req.body);
+      console.log(checkLogin)
+      res.json (checkLogin)
+  }
+  catch (e) {
+      res.json ({
+          status: "nok",
+          message: e
+      })
+  }
 });
 
 router.get('/', function (req, res, next) {
